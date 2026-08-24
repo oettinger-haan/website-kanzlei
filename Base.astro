@@ -1,0 +1,288 @@
+---
+// src/layouts/Base.astro
+//
+// Gemeinsamer Rahmen fuer alle Seiten: <head> mit echten Per-Page-SEO-Werten
+// (kein dynamisches JS-Meta-Update mehr noetig - jede Seite hat ihr eigenes
+// Astro-Template und damit ihr eigenes, serverseitig gerendertes <head>),
+// Header/Navigation mit echten URLs, Footer, Cookie-Consent-Banner.
+//
+// Aktive Navigationspunkte werden serverseitig aus Astro.url.pathname
+// berechnet - kein Client-JS fuer "welche Seite ist aktiv" mehr noetig.
+
+export interface Props {
+  title: string;
+  description: string;
+  /** true fuer Seiten, die noch keinen ausgereiften Inhalt haben (z. B. Platzhalter). */
+  noindex?: boolean;
+  /** Absoluter Bildpfad fuers Open-Graph-Bild. Weglassen statt Platzhalter, wenn kein Bild existiert. */
+  ogImage?: string;
+  /** Optionale zusaetzliche JSON-LD-Bloecke (FAQPage, Article, ...), bereits als Objekt. */
+  structuredData?: object[];
+}
+
+const {
+  title,
+  description,
+  noindex = false,
+  ogImage,
+  structuredData = [],
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const path = Astro.url.pathname;
+
+// Aktiv-Status fuer Haupt- und Dropdown-Links: startsWith-Vergleich reicht,
+// weil jede Sektion ihren eigenen Pfadpraefix hat (/leistungen/..., /branchen/...).
+const isActive = (prefix: string) => path === prefix || path.startsWith(prefix);
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "@id": (Astro.site?.toString() ?? "") + "#organization",
+  name: "Steuerberatung Oettinger",
+  founder: { "@type": "Person", name: "Evelyn Krämer" },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Zeppelinstraße 1",
+    postalCode: "42781",
+    addressLocality: "Haan",
+    addressCountry: "DE",
+  },
+  telephone: "+49 2129 566 22 0",
+  email: "info@stbin-oettinger.de",
+  url: Astro.site?.toString(),
+};
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Schriften selbst gehostet (DSGVO): keine Verbindung zu Google-Servern. -->
+    <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin="" />
+    <link rel="preload" href="/assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin="" />
+    <link href="/assets/fonts/fonts.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    {structuredData.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+  </head>
+  <body>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+    <div class="site-chrome">
+      <div class="topbar">
+        <div class="container topbar-inner">
+          <div class="topbar-contact">
+            <a href="mailto:info@stbin-oettinger.de">info@stbin-oettinger.de</a>
+            <a href="tel:+492129566220">+49 (0) 2129 566 22 0</a>
+          </div>
+        </div>
+      </div>
+
+      <header class="site-header">
+        <div class="container header-inner">
+          <a href="/" class="brand" aria-label="Zur Startseite">
+            <img src="/assets/logo-oettinger.png" alt="Logo Steuerberatung Oettinger" width="218" height="60" decoding="async" loading="lazy" />
+          </a>
+
+          <nav class="nav-desktop" aria-label="Hauptnavigation">
+            <div class="nav-item">
+              <a href="/leistungen/" class:list={["nav-link", { active: isActive("/leistungen/") }]}>
+                Leistungen <span class="caret">▾</span>
+              </a>
+              <div class="dropdown">
+                <a href="/leistungen/unternehmer/" class="dropdown-link">
+                  <strong>Unternehmer</strong>
+                  <span>Steuerliche Begleitung, Prozesse und unternehmerische Klarheit.</span>
+                </a>
+                <a href="/leistungen/privatpersonen/" class="dropdown-link">
+                  <strong>Privatpersonen</strong>
+                  <span>Persönliche Themen, Strukturierung und langfristige Planung.</span>
+                </a>
+                <a href="/leistungen/vermoegensaufbau/" class="dropdown-link">
+                  <strong>Steueroptimierter Vermögensaufbau</strong>
+                  <span>Strukturierung, Strategie und langfristiger Vermögensaufbau.</span>
+                </a>
+                <a href="/leistungen/lohnkompetenzzentrum/" class="dropdown-link">
+                  <strong>Lohnkompetenzzentrum</strong>
+                  <span>Payroll- und Lohnkompetenz als eigenständiger Fokusbereich.</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a href="/branchen/" class:list={["nav-link", { active: isActive("/branchen/") }]}>
+                Branchen <span class="caret">▾</span>
+              </a>
+              <div class="dropdown">
+                <a href="/branchen/e-commerce/" class="dropdown-link">
+                  <strong>E-Commerce</strong>
+                  <span>Digitale Abläufe, Umsatzsteuer und Plattformlogik für Onlinehändler.</span>
+                </a>
+                <a href="/branchen/handwerk-bau/" class="dropdown-link">
+                  <strong>Handwerk &amp; Bau</strong>
+                  <span>Praxisnahe Steuerberatung, Lohn und digitale Zusammenarbeit.</span>
+                </a>
+                <a href="/branchen/finanzdienstleister/" class="dropdown-link">
+                  <strong>Finanzdienstleister &amp; Versicherer</strong>
+                  <span>Vertrauensstarke Begleitung für sensible Geschäftsmodelle.</span>
+                </a>
+              </div>
+            </div>
+
+            <a href="/kanzlei/" class:list={["nav-link", { active: isActive("/kanzlei/") }]}>Kanzlei</a>
+            <a href="/karriere/" class:list={["nav-link", { active: isActive("/karriere/") }]}>Karriere</a>
+
+            <div class="nav-item">
+              <a href="/aktuelles/" class:list={["nav-link", { active: isActive("/aktuelles/") }]}>
+                Aktuelles <span class="caret">▾</span>
+              </a>
+              <div class="dropdown">
+                <a href="/news/" class="dropdown-link">
+                  <strong>News</strong>
+                  <span>Kompakte Updates und Hinweise mit direktem Mandantenbezug.</span>
+                </a>
+                <a href="/aktuelles/blog/" class="dropdown-link">
+                  <strong>Blog</strong>
+                  <span>Vertiefende Inhalte zur Einordnung, Sichtbarkeit und Kompetenz.</span>
+                </a>
+              </div>
+            </div>
+
+            <a href="/kontakt/" class:list={["nav-link", { active: isActive("/kontakt/") }]}>Kontakt</a>
+          </nav>
+
+          <div class="header-actions" aria-label="Header-Aktionen">
+            <a href="/kontakt/" class="button">Kontakt</a>
+            <input id="nav-toggle" class="mobile-nav-toggle" type="checkbox" />
+            <label for="nav-toggle" class="mobile-menu-button" aria-label="Menü öffnen">☰</label>
+          </div>
+
+          <div class="mobile-panel">
+            <div class="mobile-panel-inner">
+              <div class="mobile-group">
+                <strong>Leistungen</strong>
+                <a href="/leistungen/">Übersicht</a>
+                <a href="/leistungen/unternehmer/">Unternehmer</a>
+                <a href="/leistungen/privatpersonen/">Privatpersonen</a>
+                <a href="/leistungen/vermoegensaufbau/">Steueroptimierter Vermögensaufbau</a>
+                <a href="/leistungen/lohnkompetenzzentrum/">Lohnkompetenzzentrum</a>
+              </div>
+              <div class="mobile-group">
+                <strong>Branchen</strong>
+                <a href="/branchen/">Übersicht</a>
+                <a href="/branchen/e-commerce/">E-Commerce</a>
+                <a href="/branchen/handwerk-bau/">Handwerk &amp; Bau</a>
+                <a href="/branchen/finanzdienstleister/">Finanzdienstleister &amp; Versicherer</a>
+              </div>
+              <div class="mobile-group">
+                <strong>Aktuelles</strong>
+                <a href="/news/">News</a>
+                <a href="/aktuelles/blog/">Blog</a>
+              </div>
+              <div class="mobile-group">
+                <strong>Weitere Seiten</strong>
+                <a href="/kanzlei/">Kanzlei</a>
+                <a href="/karriere/">Karriere</a>
+                <a href="/kontakt/">Kontakt</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <main id="inhalt" tabindex="-1">
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top-row">
+          <div class="footer-map-col">
+            <div class="embed-consent embed-consent-footer" data-embed="google-maps" data-src="https://www.google.com/maps?q=Zeppelinstra%C3%9Fe%201%2C%2042781%20Haan&z=15&output=embed" aria-label="Google Maps Einbettung">
+              <div class="embed-consent-inner">
+                <span class="embed-consent-badge">Externer Inhalt · Google Maps</span>
+                <p class="copy-tight">Wird nach Ihrer Zustimmung im Banner unten angezeigt.</p>
+                <a href="https://www.google.com/maps?q=Zeppelinstra%C3%9Fe%201%2C%2042781%20Haan" target="_blank" rel="noopener" class="link-inline mt-1">In Google Maps öffnen</a>
+              </div>
+            </div>
+            <div class="footer-map-line">
+              <strong>Steuerberatung Oettinger</strong> · Zeppelinstraße 1, 42781 Haan, NRW · <a href="https://www.google.com/maps?q=Zeppelinstra%C3%9Fe%201%2C%2042781%20Haan" target="_blank" rel="noopener">In Google Maps öffnen</a>
+            </div>
+          </div>
+
+          <div class="footer-block">
+            <h2>Steuerberatung Oettinger</h2>
+            <p>Zeppelinstraße 1<br />42781 Haan, NRW</p>
+            <p class="mt-1">Telefon: +49 (0) 2129 566 22 0<br />E-Mail: info@stbin-oettinger.de</p>
+            <p class="mt-1"><strong>Öffnungszeiten</strong><br />Mo, Di, Do 08:00–17:00 Uhr<br />Mi 08:00–14:00 Uhr<br />Fr geschlossen · Termine nach Vereinbarung</p>
+          </div>
+
+          <div class="footer-block">
+            <div class="footer-links">
+              <ul>
+                <li class="footer-cat"><a href="/leistungen/">Leistungen</a></li>
+                <li><a href="/leistungen/unternehmer/">Unternehmer</a></li>
+                <li><a href="/leistungen/privatpersonen/">Privatpersonen</a></li>
+                <li><a href="/leistungen/vermoegensaufbau/">Steueroptimierter Vermögensaufbau</a></li>
+                <li><a href="/leistungen/lohnkompetenzzentrum/">Lohnkompetenzzentrum</a></li>
+              </ul>
+              <ul>
+                <li class="footer-cat"><a href="/branchen/">Branchen</a></li>
+                <li><a href="/branchen/e-commerce/">E-Commerce</a></li>
+                <li><a href="/branchen/handwerk-bau/">Handwerk &amp; Bau</a></li>
+                <li><a href="/branchen/finanzdienstleister/">Finanzdienstleister &amp; Versicherer</a></li>
+              </ul>
+              <ul>
+                <li class="footer-cat"><a href="/karriere/">Kanzlei</a></li>
+                <li><a href="/karriere/">Karriere</a></li>
+                <li><a href="/aktuelles/">Aktuelles</a></li>
+                <li><a href="/dialog/">Newsletter</a></li>
+                <li><a href="/kontakt/">Kontakt</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-block">
+            <div class="footer-links footer-links--single">
+              <ul>
+                <li class="footer-cat"><a href="/datenschutz/">Rechtliches</a></li>
+                <li><a href="/impressum/">Impressum</a></li>
+                <li><a href="/datenschutz/">Datenschutz</a></li>
+                <li><a href="/kontakt/">Kontakt</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 Steuerberatung Oettinger · Evelyn Krämer</span>
+          <button type="button" class="link-inline footer-consent-link" data-consent-manage="external">Datenschutz-Einstellungen ändern</button>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      import '../scripts/site.js';
+    </script>
+  </body>
+</html>

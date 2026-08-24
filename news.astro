@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'News | Fristen, Hinweise & Updates | Steuerberatung Oettinger (Haan)';
+const description = 'Kompakte Updates zu Fristen, Änderungen und typischen Praxisfragen – verständlich zusammengefasst und bei Bedarf im Gespräch eingeordnet.';
+---
+
+<Base title={title} description={description} noindex={true}>
+<!-- SEO: News/Blog are placeholders until real content exists -->
+        <section class="subhero">
+          <div class="container">
+            <div class="eyebrow">Aktuelles</div>
+            <h1 class="section-title">News</h1>
+            <p class="section-copy">Kompakte Hinweise, Fristen und Updates – so aufbereitet, dass Mandanten schnell verstehen, was relevant ist.</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="eyebrow">Neu</div>
+            <h2 class="section-title section-title--sub">Aktuelle Hinweise</h2>
+            <p class="section-copy">Kuratierte Steuer-News, laufend aktuell gehalten. Wenn Sie zu einem Thema Fragen haben: melden Sie sich kurz – wir ordnen es in Ihre Situation ein.</p>
+
+            <!-- WIADOK Steuernews-Widget. Liegt inert in einem <template>,
+                 bis Zustimmung zu externen Inhalten vorliegt (site.js
+                 klont den Inhalt dann erst in den sichtbaren Bereich und
+                 fuehrt das enthaltene Script kontrolliert aus). -->
+            <div class="embed-consent embed-consent--fluid mt-4" data-embed="wiadok-steuernews" aria-label="Steuernews von WIADOK">
+              <div class="embed-consent-inner">
+                <span class="embed-consent-badge">Externer Inhalt &middot; WIADOK Steuernews</span>
+                <p class="copy-tight">Wird nach Ihrer Zustimmung im Banner unten angezeigt.</p>
+              </div>
+              <template>
+                <link rel="stylesheet" href="https://publisher-api.wiadok.de/apiSources/82389221/view.css">
+                <wiadok-frame api-config="{&quot;_confRequestUrl&quot;:&quot;https%3A%2F%2Fwww.steuerberaterin-haan.de%2Fnews%2F&quot;,&quot;_confErrorFlag&quot;:0,&quot;_confClientCssUrl&quot;:&quot;https://publisher-api.wiadok.de/apiSources/82389221/view.css&quot;,&quot;_confTemplateId&quot;:82389221}" api-client-data="{&quot;_dataApiType&quot;:&quot;steuernews&quot;,&quot;_dataApiColor&quot;:&quot;#4d179a&quot;,&quot;_shareBar&quot;:true,&quot;_teaserLocation&quot;:[&quot;https://www.steuerberaterin-haan.de/news/&quot;]}"></wiadok-frame>
+                <script is:inline>
+                  var _wiadok = _wiadok || [];
+                  _wiadok['_baseUrl'] = 'publisher-api.wiadok.de';
+                  _wiadok['_requestUrl'] = encodeURIComponent(document.location.href);
+                  (function () {
+                    var wiadok = document.createElement('script');
+                    wiadok.type = 'text/javascript';
+                    wiadok.src = '//' + _wiadok['_baseUrl'] + '/custom/themes/api-v2.0.2/api.min.js';
+                    document.getElementsByTagName('head')[0].appendChild(wiadok);
+                  })();
+                </script>
+              </template>
+            </div>
+          </div>
+        </section>
+</Base>

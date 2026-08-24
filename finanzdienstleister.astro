@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Steuerberatung für Finanzdienstleister & Versicherer | Oettinger';
+const description = 'Ruhige, diskrete Beratung mit Struktur für sensible Geschäftsmodelle – individuell, professionell und mit festen Ansprechpartnern.';
+---
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Warum ist für diese Branche eine besonders ruhige Beratung wichtig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil sensible Geschäftsmodelle Vertrauen, Diskretion und eine klare Kommunikation ohne unnötige Reibung verlangen. Genau darauf ist die Zusammenarbeit ausgerichtet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Begleiten Sie auch anspruchsvolle, beratungsintensive Themen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Der Fokus liegt gerade auf strukturierter Einordnung, fachlicher Tiefe und einer Zusammenarbeit, die nicht mit Standardantworten arbeitet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie läuft die Zusammenarbeit typischerweise ab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verlässlich, geordnet und mit festen Ansprechpartnern. Ziel ist, dass sensible Themen effizient und zugleich mit der nötigen Diskretion bearbeitet werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist die Betreuung eher standardisiert oder individuell?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Individuell. Gerade in diesem Bereich braucht es Lösungen, die zur konkreten Struktur, Verantwortung und Außendarstellung des Unternehmens passen."
+      }
+    }
+  ]
+};
+
+<Base title={title} description={description} noindex={false} structuredData={[faqSchema]}>
+<section class="subhero"><div class="container subhero-layout"><div><div class="eyebrow">Finanzdienstleister &amp; Versicherer</div><h1 class="section-title">Beratung für Geschäftsmodelle, bei denen Vertrauen und Struktur zentral sind.</h1><p class="section-copy">Finanzdienstleister und Versicherer arbeiten in einem sensiblen Umfeld, in dem Diskretion und Verlässlichkeit zählen. Wir begleiten Sie ruhig, strukturiert und mit dem nötigen Fachverständnis für beratungsintensive Geschäftsmodelle.</p></div><div class="subhero-panel"><h2 class="mt-0">Was Sie bei uns erwartet</h2><ul><li>eine ruhige, professionelle Zusammenarbeit ohne Verkaufsdruck</li><li>verlässliche Beratung statt Standardlösungen</li><li>Fachverständnis für anspruchsvolle Themen</li></ul></div></div></section>
+        <section class="section"><div class="container grid-3"><article class="card"><div class="card-kicker">Seriosität</div><h3>Ruhige Kommunikation mit klarer Struktur.</h3><p>Wir kommunizieren klar und verlässlich – ohne Verkaufsdruck, dafür mit fachlicher Tiefe.</p></article><article class="card"><div class="card-kicker">Beratungsanspruch</div><h3>Klare Einordnung statt standardisierter Antworten.</h3><p>Wir ordnen Ihre Themen fundiert ein, statt mit standardisierten Antworten zu arbeiten.</p></article><article class="card"><div class="card-kicker">Diskretion</div><h3>Vertrauen ist hier Teil der Leistung.</h3><p>Sensible Themen verlangen einen ruhigen Ton, Verlässlichkeit und saubere Prozesse.</p></article></div><div class="container"><div class="page-actions"><a href="/kontakt/" class="button">Gespräch anfragen</a></div></div><div class="container mt-4"><div class="eyebrow">FAQ</div><h2 class="section-title section-title--sub">Häufige Fragen von Finanzdienstleistern &amp; Versicherern</h2><div class="faq-list"><details class="faq-item"><summary>Warum ist für diese Branche eine besonders ruhige Beratung wichtig?</summary><div class="faq-answer"><p>Weil sensible Geschäftsmodelle Vertrauen, Diskretion und eine klare Kommunikation ohne unnötige Reibung verlangen. Genau darauf ist die Zusammenarbeit ausgerichtet.</p></div></details><details class="faq-item"><summary>Begleiten Sie auch anspruchsvolle, beratungsintensive Themen?</summary><div class="faq-answer"><p>Ja. Der Fokus liegt gerade auf strukturierter Einordnung, fachlicher Tiefe und einer Zusammenarbeit, die nicht mit Standardantworten arbeitet.</p></div></details><details class="faq-item"><summary>Wie läuft die Zusammenarbeit typischerweise ab?</summary><div class="faq-answer"><p>Verlässlich, geordnet und mit festen Ansprechpartnern. Ziel ist, dass sensible Themen effizient und zugleich mit der nötigen Diskretion bearbeitet werden.</p></div></details><details class="faq-item"><summary>Ist die Betreuung eher standardisiert oder individuell?</summary><div class="faq-answer"><p>Individuell. Gerade in diesem Bereich braucht es Lösungen, die zur konkreten Struktur, Verantwortung und Außendarstellung des Unternehmens passen.</p></div></details></div></div></section>
+</Base>

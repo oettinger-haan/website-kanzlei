@@ -1,0 +1,188 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Steuerberater für E-Commerce | Buchhaltung, OSS & FBA';
+const description = 'E-Commerce-Steuerberatung für Onlinehändler: Shopify, Amazon FBA, JTL, Schnittstellen, OSS, Umsatzsteuer und Zahlungsabgleich – fachlich eingeordnet und digital begleitet.';
+---
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Welche Shopsysteme, Marktplätze und Warenwirtschaftssysteme unterstützen Sie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir arbeiten unter anderem mit Shopify, Amazon beziehungsweise Amazon FBA sowie JTL und JTL-Wawi. Auch andere Shopsysteme, Marktplätze, Zahlungsanbieter und Warenwirtschaftssysteme können grundsätzlich eingebunden werden. Entscheidend ist nicht nur, ob ein System technisch angebunden werden kann – die Daten müssen vollständig, nachvollziehbar und passend für Ihre Finanzbuchführung verarbeitet werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich meine bestehende Software wechseln?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nicht grundsätzlich. Zunächst prüfen wir, welche Systeme Sie bereits nutzen und wie Ihre Daten aktuell verarbeitet werden. Wenn sich Ihre bestehende Struktur sinnvoll erweitern lässt, bauen wir darauf auf. Wenn für Ihr Geschäftsmodell oder Ihre Datenstruktur eine andere Lösung besser geeignet ist, besprechen wir das transparent mit Ihnen – AccountOne kann bei passenden E-Commerce-Setups eine geeignete Lösung für die strukturierte Aufbereitung von Verkaufs- und Zahlungsdaten sein."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was übernimmt AccountOne – und was übernimmt die Kanzlei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AccountOne bereitet Verkaufs- und Zahlungsdaten aus den angebundenen Systemen für die weitere Verarbeitung auf, etwa aus Shops, Marktplätzen und Zahlungsanbietern. Sie schließen den Vertrag direkt mit AccountOne und werden dort eigener Kunde. Wir bringen die Anforderungen aus Finanzbuchführung und Steuerberatung ein, begleiten die fachliche Einrichtung und bleiben bei Abstimmungen im direkten Austausch mit AccountOne. Unser Beitrag besteht darin, die technische Datenaufbereitung sinnvoll in Ihre Buchführungs- und Steuerlogik einzuordnen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Rolle übernimmt Pathway Solutions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pathway Solutions unterstützt bei der technischen Einrichtung und Datenanbindung geeigneter E-Commerce-Systeme, insbesondere bei Shopify-Setups. Wir bringen die Anforderungen aus Finanzbuchführung und Steuerberatung ein und stimmen die technische Umsetzung auf Ihre Prozesse ab – so entsteht nicht nur eine technische Verbindung, sondern eine Lösung, die zu Ihrer Buchführung und Ihrem Geschäftsmodell passt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert das Matching von Zahlungen, Rechnungen und Order-IDs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shopsysteme, Marktplätze und Zahlungsanbieter verwenden häufig unterschiedliche Bezeichnungen und Kennungen für denselben Vorgang. Mit geeigneter Software unterstützen wir dabei, diese Daten automatisiert und nachvollziehbar zuzuordnen. Vor der Einrichtung prüfen wir, welche Systeme beteiligt sind und welche Daten für ein zuverlässiges Matching benötigt werden; die Einrichtung wird anschließend fachlich begleitet und auf Plausibilität geprüft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Unterstützen Sie auch bei Amazon FBA, OSS und innergemeinschaftlichem Verbringen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Wir begleiten die steuerliche Einordnung von Amazon FBA, OSS und innergemeinschaftlichem Verbringen – unter anderem Warenbewegungen zwischen EU-Ländern, Lagerbestände im Rahmen von FBA, Verkäufe über unterschiedliche Marktplätze, umsatzsteuerliche Pflichten bei Verkäufen in andere EU-Länder sowie die erforderliche Datenbasis für Meldungen und Auswertungen. Die konkrete steuerliche Behandlung hängt von Geschäftsmodell, Warenbewegungen, Verkaufskanälen und Lagerstandorten ab, deshalb prüfen wir die Anforderungen anhand Ihres individuellen Setups."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer übernimmt die Umsatzsteuermeldungen und EU-Registrierungen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die deutschen Umsatzsteuervoranmeldungen und OSS-Meldungen erstellen wir im Rahmen der steuerlichen Betreuung. Bei EU-Registrierungen und Umsatzsteuermeldungen im Ausland arbeiten wir mit spezialisierten Partnern zusammen: Wir ordnen den Unterstützungsbedarf fachlich ein, empfehlen bei Bedarf einen geeigneten Partner und koordinieren die Abstimmung zwischen Ihnen, unserer Kanzlei und dem zuständigen Dienstleister. Vertrag und Beauftragung für die Leistungen des Partners erfolgen direkt zwischen Ihnen und dem jeweiligen Dienstleister, sodass Zuständigkeiten transparent bleiben."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist eine vollständig digitale Zusammenarbeit möglich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digitale Zusammenarbeit ist bei uns der Regelfall. Belege, Daten und Abstimmungen können strukturiert digital übermittelt und bearbeitet werden. Einzelne Fragen oder strategische Themen besprechen wir selbstverständlich persönlich oder telefonisch – digital bedeutet für uns nicht unpersönlich, sondern klare Abläufe, weniger Medienbrüche und eine Zusammenarbeit, die zum Arbeitsalltag im E-Commerce passt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was benötigen Sie, um mein E-Commerce-Setup zu prüfen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für eine erste Einschätzung benötigen wir einen Überblick über Ihr Geschäftsmodell und Ihre Systemlandschaft: genutzte Shopsysteme und Marktplätze, Zahlungsanbieter, Warenwirtschafts- oder ERP-Systeme, Verkaufsländer und Lagerstandorte, FBA-, FBM- oder andere Fulfillment-Strukturen, bisherige Buchführungs- und Umsatzsteuerprozesse sowie bestehende Schnittstellen und Softwarelösungen. Auf dieser Grundlage können wir einschätzen, welche Datenflüsse, Schnittstellen und umsatzsteuerlichen Themen für Ihr Unternehmen relevant sind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bringt mir eine spezialisierte E-Commerce-Buchhaltung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine passende E-Commerce-Buchhaltung reduziert manuelle Nacharbeit und schafft eine verlässlichere Grundlage für Auswertungen und Entscheidungen. Verkaufs-, Zahlungs- und Buchungsdaten werden nicht isoliert betrachtet, sondern als zusammenhängender Prozess eingerichtet – so erhalten Sie keine reine Belegverwaltung, sondern eine Buchführungsstruktur, die zu Ihrem Onlinehandel, Ihren Verkaufskanälen und Ihren steuerlichen Anforderungen passt."
+      }
+    }
+  ]
+};
+
+<Base title={title} description={description} noindex={false} structuredData={[faqSchema]}>
+<section class="subhero"><div class="container subhero-layout"><div><div class="eyebrow">E-Commerce</div><h1 class="section-title">Struktur für Ihren Online-Handel – steuerlich und betrieblich.</h1><p class="section-copy">Shopsysteme, Zahlungsanbieter, Marktplätze und Finanzbuchführung laufen bei uns nicht nebeneinander, sondern zusammen. Wir schaffen Struktur in Plattformen, Payments und Schnittstellen – und begleiten Sie steuerlich wie betriebswirtschaftlich, damit Wachstum nicht im Buchhaltungs-Chaos endet.</p></div><div class="subhero-panel"><h2 class="mt-0">Diese Beratung passt besonders zu Ihnen, wenn Sie</h2><ul><li>über mehrere Verkaufskanäle oder Marktplätze verkaufen</li><li>Zahlungsströme und Buchführung sinnvoll zusammenführen möchten</li><li>Shopify, Amazon, JTL oder andere E-Commerce-Systeme nutzen</li><li>FBA, OSS oder Verkäufe in andere EU-Länder abbilden müssen</li><li>eine Buchführung suchen, die mit Ihrem Onlinehandel mitwächst</li></ul></div></div><div class="container microcards-full"><div class="microcards" aria-label="E-Commerce auf einen Blick"><div class="microcard"><div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M6 10h12"></path><path d="M6 14h8"></path><path d="M6 18h10"></path></svg></div><div><strong>Verlässliche Daten für verlässliche Entscheidungen</strong><span>Shop, Zahlungsanbieter, Marktplätze und Bank liefern viele einzelne Daten. Wir helfen dabei, diese Informationen nachvollziehbar zusammenzuführen und für die Finanzbuchführung nutzbar zu machen.</span></div></div><div class="microcard"><div class="icon-badge" aria-hidden="true"><span class="glyph">§</span></div><div><strong>Umsatzsteuer frühzeitig richtig einordnen</strong><span>OSS, FBA, innergemeinschaftliches Verbringen und weitere umsatzsteuerliche Fragen werden von Anfang an berücksichtigt – damit Wachstum nicht später zu Korrekturen und unnötigem Aufwand führt.</span></div></div><div class="microcard"><div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73z"></path><path d="M3.3 7l8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg></div><div><strong>Automatisierung, die im Alltag wirklich entlastet</strong><span>Wir unterstützen Sie dabei, wiederkehrende Abläufe sinnvoll zu automatisieren – mit klaren Zuständigkeiten, verlässlichen Datenflüssen und ohne unnötigen Tool-Wildwuchs.</span></div></div></div></div></section>
+
+        <section class="section--sm">
+          <div class="container">
+            <div class="statement-box">
+              <p>Wir empfehlen nicht einfach eine Schnittstelle. Wir sorgen dafür, dass technische Datenaufbereitung, Finanzbuchführung und steuerliche Anforderungen zusammenpassen.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section--sm section--soft">
+          <div class="container">
+            <div class="eyebrow">So arbeiten Ihre Daten bei uns</div>
+            <h2 class="section-title section-title--sub mt-0">Vom Verkauf bis zur Meldung – ein durchgängiger Weg.</h2>
+            <div class="dataflow" aria-label="Datenfluss von Verkauf bis Umsatzsteuer">
+              <div class="dataflow-node"><div class="dataflow-index">1</div><strong>Shop oder Marktplatz</strong></div>
+              <div class="dataflow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></div>
+              <div class="dataflow-node"><div class="dataflow-index">2</div><strong>Zahlungsanbieter</strong></div>
+              <div class="dataflow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></div>
+              <div class="dataflow-node"><div class="dataflow-index">3</div><strong>Datenaufbereitung &amp; Matching</strong></div>
+              <div class="dataflow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></div>
+              <div class="dataflow-node"><div class="dataflow-index">4</div><strong>Finanzbuchführung</strong></div>
+              <div class="dataflow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></div>
+              <div class="dataflow-node"><div class="dataflow-index">5</div><strong>Umsatzsteuer &amp; OSS</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container grid-3">
+            <article class="card"><div class="card-kicker">Schnittstellenmanagement</div><h3>Ein System, viele Quellen.</h3><p>Verkäufe aus Shopify, Amazon oder Ihrer Warenwirtschaft wie JTL, Zahlungseingänge und Kontobewegungen laufen häufig getrennt auf. Wir verbinden diese Daten nicht einfach nur technisch, sondern richten die Prozesse so ein, dass sie für Ihre Finanzbuchführung sinnvoll zusammenlaufen – nachvollziehbar, automatisiert und mit möglichst wenig manueller Nacharbeit. So entsteht aus vielen einzelnen Verkaufs- und Zahlungsdaten eine Buchführung, mit der Sie Ihr Geschäft tatsächlich steuern können.</p></article>
+            <article class="card"><div class="card-kicker">Umsatzsteuer &amp; FBA</div><h3>Vorausschauend statt reagierend.</h3><p>Bevor das Finanzamt fragt, wissen wir es längst. Lieferschwellen, OSS-Meldungen, FBA-Lagerbestände in mehreren EU-Ländern, innergemeinschaftliches Verbringen: Bei wachsendem Online-Handel wird Umsatzsteuer schnell komplex – und teuer, wenn sie zu spät auffällt. Wir behalten Ihre umsatzsteuerlichen Pflichten im Blick, bevor sie zum Problem werden. Für EU-Registrierungen empfehlen wir unsere Partner (z. B. AccountOne, Pathway Solutions) und stellen den direkten Kontakt her – die Einrichtung übernehmen die Partner, wir bleiben eng eingebunden.</p></article>
+            <article class="card"><div class="card-kicker">Zahlungsabgleich &amp; Matching</div><h3>Eine Zahlung, viele Bezeichnungen.</h3><p>Zahlungseingang von PayPal, Bestellnummer im Shop, Abrechnung vom Marktplatz – für denselben Vorgang nutzt jedes System eine eigene Kennung. Mit der passenden Software sorgen wir dafür, dass Zahlung, Rechnung und Order-ID zuverlässig zueinander finden, auch wenn die Bezeichnungen nicht übereinstimmen.</p></article>
+          </div>
+
+          <div class="container mt-4">
+            <div class="partner-box">
+              <h3>Technische Lösungen, fachlich richtig eingeordnet</h3>
+              <p class="copy-tight">Im Onlinehandel müssen technische Datenaufbereitung und steuerliche Verarbeitung zusammenpassen. Deshalb empfehlen wir – abhängig von Ihrer Systemlandschaft und Ihrem Geschäftsmodell – passende Lösungen und stimmen deren Einrichtung auf die Anforderungen Ihrer Finanzbuchführung ab. Sie bleiben dabei nicht mit einer Software allein: Wir unterstützen bei der fachlichen Einordnung, begleiten die Einrichtung und achten darauf, dass die technische Lösung in eine nachvollziehbare Buchführungsstruktur passt.</p>
+              <div class="partner-grid">
+                <div>
+                  <h4>AccountOne für E-Commerce-Daten</h4>
+                  <p>Für die strukturierte Aufbereitung von Verkaufs- und Zahlungsdaten empfehlen wir AccountOne. Sie schließen den Vertrag direkt mit AccountOne und werden dort eigener Kunde. AccountOne unterstützt bei der Einrichtung der Software und der Anbindung der relevanten Datenquellen – wir bringen die Anforderungen aus Finanzbuchführung und Steuerberatung ein und bleiben im direkten Austausch eingebunden.</p>
+                </div>
+                <div>
+                  <h4>Shopify &amp; technische Anbindungen</h4>
+                  <p>Nutzen Sie Shopify oder ein anderes Shopsystem? Für die technische Umsetzung können wir bei Bedarf auf die Expertise unseres Partners Pathway Solutions zurückgreifen. Wir stimmen die Anbindung auf Ihre Finanzbuchführung und Ihre Prozesse ab.</p>
+                </div>
+                <div>
+                  <h4>EU-Umsatzsteuer &amp; Registrierungen</h4>
+                  <p>Registrierung, laufende Meldungen und die dafür nötige Datenbasis werden mit den jeweils zuständigen Spezialisten abgestimmt. Vertrag und Beauftragung erfolgen direkt mit dem zuständigen Dienstleister – die deutschen Umsatzsteuervoranmeldungen und OSS-Meldungen erstellen wir im Rahmen der steuerlichen Betreuung.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-3">
+            <article class="card soft">
+              <div class="card-kicker">Finanzbuchführung, die zum Onlinehandel passt</div>
+              <h3>Mehr als Belege sammeln und Umsätze verbuchen.</h3>
+              <p>Verkaufs-, Zahlungs- und Buchungsdaten entstehen in unterschiedlichen Systemen. Entscheidend ist, dass sie vollständig, nachvollziehbar und steuerlich richtig zusammengeführt werden. Wir unterstützen Sie insbesondere bei:</p>
+              <ul>
+                <li>der Einrichtung und Abstimmung automatisierter Datenflüsse aus Shop, Marktplatz, Zahlungsanbieter oder Warenwirtschaftssystem in die Finanzbuchführung</li>
+                <li>der Auswahl und Einrichtung geeigneter Software für das korrekte Matching von Zahlungen, Rechnungen und Order-IDs</li>
+                <li>der Einordnung umsatzsteuerlicher Pflichten bei Verkäufen in andere EU-Länder, einschließlich OSS und innergemeinschaftlichem Verbringen</li>
+                <li>der Prüfung, ob die übertragenen Daten vollständig und plausibel verarbeitet werden</li>
+                <li>der Festlegung, an welchen Stellen automatisierte Abläufe durch fachliche Kontrollen ergänzt werden müssen</li>
+              </ul>
+              <p class="muted mt-2">Größere Onlinehandelsunternehmen mit eigener Lohnabrechnung finden zusätzlich im <a class="link-inline" href="/leistungen/lohnkompetenzzentrum/">Lohnkompetenzzentrum</a> einen spezialisierten Ansprechpartner. Für die betriebswirtschaftliche Seite Ihres Unternehmens lohnt zudem ein Blick auf unsere Leistungen <a class="link-inline" href="/leistungen/unternehmer/">für Unternehmer</a>.</p>
+            </article>
+          </div>
+
+          <div class="container mt-4">
+            <div class="page-actions"><a href="/kontakt/" class="button">E-Commerce-Setup besprechen</a></div>
+          </div>
+
+          <div class="container mt-4">
+            <div class="eyebrow">FAQ</div>
+            <h2 class="section-title section-title--sub">Häufige Fragen von E-Commerce-Mandanten</h2>
+            <div class="faq-list">
+              <details class="faq-item"><summary>Welche Shopsysteme, Marktplätze und Warenwirtschaftssysteme unterstützen Sie?</summary><div class="faq-answer"><p>Wir arbeiten unter anderem mit Shopify, Amazon beziehungsweise Amazon FBA sowie JTL und JTL-Wawi. Auch andere Shopsysteme, Marktplätze, Zahlungsanbieter und Warenwirtschaftssysteme können grundsätzlich eingebunden werden. Entscheidend ist nicht nur, ob ein System technisch angebunden werden kann – die Daten müssen vollständig, nachvollziehbar und passend für Ihre Finanzbuchführung verarbeitet werden.</p></div></details>
+              <details class="faq-item"><summary>Muss ich meine bestehende Software wechseln?</summary><div class="faq-answer"><p>Nicht grundsätzlich. Zunächst prüfen wir, welche Systeme Sie bereits nutzen und wie Ihre Daten aktuell verarbeitet werden. Wenn sich Ihre bestehende Struktur sinnvoll erweitern lässt, bauen wir darauf auf. Wenn für Ihr Geschäftsmodell oder Ihre Datenstruktur eine andere Lösung besser geeignet ist, besprechen wir das transparent mit Ihnen – AccountOne kann bei passenden E-Commerce-Setups eine geeignete Lösung für die strukturierte Aufbereitung von Verkaufs- und Zahlungsdaten sein.</p></div></details>
+              <details class="faq-item"><summary>Was übernimmt AccountOne – und was übernimmt die Kanzlei?</summary><div class="faq-answer"><p>AccountOne bereitet Verkaufs- und Zahlungsdaten aus den angebundenen Systemen für die weitere Verarbeitung auf, etwa aus Shops, Marktplätzen und Zahlungsanbietern. Sie schließen den Vertrag direkt mit AccountOne und werden dort eigener Kunde. Wir bringen die Anforderungen aus Finanzbuchführung und Steuerberatung ein, begleiten die fachliche Einrichtung und bleiben bei Abstimmungen im direkten Austausch mit AccountOne. Unser Beitrag besteht darin, die technische Datenaufbereitung sinnvoll in Ihre Buchführungs- und Steuerlogik einzuordnen.</p></div></details>
+              <details class="faq-item"><summary>Welche Rolle übernimmt Pathway Solutions?</summary><div class="faq-answer"><p>Pathway Solutions unterstützt bei der technischen Einrichtung und Datenanbindung geeigneter E-Commerce-Systeme, insbesondere bei Shopify-Setups. Wir bringen die Anforderungen aus Finanzbuchführung und Steuerberatung ein und stimmen die technische Umsetzung auf Ihre Prozesse ab – so entsteht nicht nur eine technische Verbindung, sondern eine Lösung, die zu Ihrer Buchführung und Ihrem Geschäftsmodell passt.</p></div></details>
+              <details class="faq-item"><summary>Wie funktioniert das Matching von Zahlungen, Rechnungen und Order-IDs?</summary><div class="faq-answer"><p>Shopsysteme, Marktplätze und Zahlungsanbieter verwenden häufig unterschiedliche Bezeichnungen und Kennungen für denselben Vorgang. Mit geeigneter Software unterstützen wir dabei, diese Daten automatisiert und nachvollziehbar zuzuordnen. Vor der Einrichtung prüfen wir, welche Systeme beteiligt sind und welche Daten für ein zuverlässiges Matching benötigt werden; die Einrichtung wird anschließend fachlich begleitet und auf Plausibilität geprüft.</p></div></details>
+              <details class="faq-item"><summary>Unterstützen Sie auch bei Amazon FBA, OSS und innergemeinschaftlichem Verbringen?</summary><div class="faq-answer"><p>Ja. Wir begleiten die steuerliche Einordnung von Amazon FBA, OSS und innergemeinschaftlichem Verbringen – unter anderem Warenbewegungen zwischen EU-Ländern, Lagerbestände im Rahmen von FBA, Verkäufe über unterschiedliche Marktplätze, umsatzsteuerliche Pflichten bei Verkäufen in andere EU-Länder sowie die erforderliche Datenbasis für Meldungen und Auswertungen. Die konkrete steuerliche Behandlung hängt von Geschäftsmodell, Warenbewegungen, Verkaufskanälen und Lagerstandorten ab, deshalb prüfen wir die Anforderungen anhand Ihres individuellen Setups.</p></div></details>
+              <details class="faq-item"><summary>Wer übernimmt die Umsatzsteuermeldungen und EU-Registrierungen?</summary><div class="faq-answer"><p>Die deutschen Umsatzsteuervoranmeldungen und OSS-Meldungen erstellen wir im Rahmen der steuerlichen Betreuung. Bei EU-Registrierungen und Umsatzsteuermeldungen im Ausland arbeiten wir mit spezialisierten Partnern zusammen: Wir ordnen den Unterstützungsbedarf fachlich ein, empfehlen bei Bedarf einen geeigneten Partner und koordinieren die Abstimmung zwischen Ihnen, unserer Kanzlei und dem zuständigen Dienstleister. Vertrag und Beauftragung für die Leistungen des Partners erfolgen direkt zwischen Ihnen und dem jeweiligen Dienstleister, sodass Zuständigkeiten transparent bleiben.</p></div></details>
+              <details class="faq-item"><summary>Ist eine vollständig digitale Zusammenarbeit möglich?</summary><div class="faq-answer"><p>Digitale Zusammenarbeit ist bei uns der Regelfall. Belege, Daten und Abstimmungen können strukturiert digital übermittelt und bearbeitet werden. Einzelne Fragen oder strategische Themen besprechen wir selbstverständlich persönlich oder telefonisch – digital bedeutet für uns nicht unpersönlich, sondern klare Abläufe, weniger Medienbrüche und eine Zusammenarbeit, die zum Arbeitsalltag im E-Commerce passt.</p></div></details>
+              <details class="faq-item"><summary>Was benötigen Sie, um mein E-Commerce-Setup zu prüfen?</summary><div class="faq-answer"><p>Für eine erste Einschätzung benötigen wir einen Überblick über Ihr Geschäftsmodell und Ihre Systemlandschaft: genutzte Shopsysteme und Marktplätze, Zahlungsanbieter, Warenwirtschafts- oder ERP-Systeme, Verkaufsländer und Lagerstandorte, FBA-, FBM- oder andere Fulfillment-Strukturen, bisherige Buchführungs- und Umsatzsteuerprozesse sowie bestehende Schnittstellen und Softwarelösungen. Auf dieser Grundlage können wir einschätzen, welche Datenflüsse, Schnittstellen und umsatzsteuerlichen Themen für Ihr Unternehmen relevant sind.</p></div></details>
+              <details class="faq-item"><summary>Was bringt mir eine spezialisierte E-Commerce-Buchhaltung?</summary><div class="faq-answer"><p>Eine passende E-Commerce-Buchhaltung reduziert manuelle Nacharbeit und schafft eine verlässlichere Grundlage für Auswertungen und Entscheidungen. Verkaufs-, Zahlungs- und Buchungsdaten werden nicht isoliert betrachtet, sondern als zusammenhängender Prozess eingerichtet – so erhalten Sie keine reine Belegverwaltung, sondern eine Buchführungsstruktur, die zu Ihrem Onlinehandel, Ihren Verkaufskanälen und Ihren steuerlichen Anforderungen passt.</p></div></details>
+            </div>
+          </div>
+        </section>
+</Base>

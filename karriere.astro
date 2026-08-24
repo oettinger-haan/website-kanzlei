@@ -1,0 +1,212 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Karriere | Arbeiten bei Steuerberatung Oettinger';
+const description = 'Karriere in einer modernen, digitalen Kanzlei: Entwicklung, Flexibilität und Teamkultur. Initiativbewerbungen willkommen.';
+---
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kann ich mich initiativ bewerben?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Wenn Sie fachlich und menschlich gut zu uns passen, sprechen wir gerne – auch ohne ausgeschriebene Stelle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schnell bekomme ich Rückmeldung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In der Regel zeitnah. Wir möchten, dass Sie nicht in einem langen Schwebezustand hängen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist ein Kennenlernen per Video möglich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Das erste Gespräch kann auch als Video-Call stattfinden – unkompliziert und effizient."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Unterlagen sollen mitgeschickt werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gern Lebenslauf und ein paar Sätze zu Ihrer Rolle. Zeugnisse sind hilfreich, aber kein Hindernis für ein erstes Gespräch."
+      }
+    }
+  ]
+};
+
+<Base title={title} description={description} noindex={false} structuredData={[faqSchema]}>
+<section class="subhero">
+          <div class="container subhero-layout">
+            <div>
+              <div class="eyebrow">Karriere</div>
+              <h1 class="section-title">Arbeiten bei Steuerberatung Oettinger: modern, digital, menschlich.</h1>
+              <p class="section-copy">Wenn Sie Verbindlichkeit, Klarheit und echte Zusammenarbeit schätzen: Bei uns arbeiten Sie in einer Kanzlei, die Prozesse sauber organisiert und Menschen respektvoll führt. Digital in den Abläufen – persönlich im Team.</p>
+              <div class="page-actions">
+                <a href="/kontakt/" class="button">Karrieregespräch anfragen</a>
+                <a href="mailto:info@stbin-oettinger.de?subject=Initiativbewerbung%20%E2%80%93%20Steuerberatung%20Oettinger" class="button-secondary">Initiativ bewerben</a>
+              </div>
+              <div class="hero-signals">
+                <span>Feste Ansprechpartner</span>
+                <span>Digitale Prozesse</span>
+                <span>Klare Kommunikation</span>
+              </div>
+            </div>
+            <div class="subhero-panel">
+              <h2 class="mt-0">Kurz &amp; ehrlich</h2>
+              <ul>
+                <li>klare Zuständigkeiten statt Chaos</li>
+                <li>Teamkultur mit Respekt – keine Ellenbogen</li>
+                <li>Qualität vor Hektik</li>
+              </ul>
+              <p class="muted mt-2">Standort: Haan (NRW) · Gespräche auch per Video möglich.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--sm">
+          <div class="container">
+            <div class="eyebrow">Benefits</div>
+            <h2 class="section-title">Ein Arbeitsplatz, der im Alltag funktioniert.</h2>
+            <p class="section-copy">Wir möchten, dass gute Arbeit möglich ist – ohne Dauerstress. Deshalb sind Abläufe, Tools und Kommunikation so aufgebaut, dass man sich auf Inhalte konzentrieren kann.</p>
+
+            <div class="grid-3 mt-4">
+              <article class="card">
+                <div class="feature-item">
+                  <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="10"></circle></svg></div>
+                  <div><div class="card-kicker">Arbeitszeit</div><h3>Planbar statt dauerhaft „on“.</h3><p>Klare Wochenstruktur, verlässliche Absprachen und ein Alltag, der nicht von Ad-hoc-Feuerwehr lebt.</p></div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="feature-item">
+                  <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M7 8h10"></path><path d="M7 12h6"></path></svg></div>
+                  <div><div class="card-kicker">Digital</div><h3>Tools, die wirklich entlasten.</h3><p>Digitale Zusammenarbeit, strukturierte Beleg-/Dokumentenprozesse und Standards, die Rückfragen reduzieren.</p></div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="feature-item">
+                  <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                  <div><div class="card-kicker">Team</div><h3>Ruhige Zusammenarbeit.</h3><p>Klare Kommunikation, gegenseitige Unterstützung und eine Kultur, in der Fragen ausdrücklich willkommen sind.</p></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--soft">
+          <div class="container">
+            <div class="mesh-panel">
+              <div class="eyebrow">Bewerbungsprozess</div>
+              <h2 class="section-title">So läuft es ab – transparent &amp; ohne Umwege.</h2>
+              <p class="section-copy">Wir halten den Prozess bewusst schlank. Sie sollen schnell wissen, woran Sie sind – und wir auch.</p>
+              <div class="steps" aria-label="Bewerbung in 4 Schritten">
+                <div class="step"><div class="step-index">1</div><div><h3>Kurzer Erstkontakt</h3><p>Ein paar Zeilen per E-Mail oder ein kurzer Anruf – gern mit Lebenslauf oder LinkedIn/XING.</p></div></div>
+                <div class="step"><div class="step-index">2</div><div><h3>Kennenlerngespräch</h3><p>20–30 Minuten (vor Ort oder Video). Wir sprechen über Rolle, Erwartungen und Arbeitsweise.</p></div></div>
+                <div class="step"><div class="step-index">3</div><div><h3>Einblick in die Praxis</h3><p>Wenn es passt: kurzer fachlicher Austausch oder Mini-Case – kein „Test-Marathon“.</p></div></div>
+                <div class="step"><div class="step-index">4</div><div><h3>Entscheidung</h3><p>Sie bekommen zeitnah Feedback. Wenn es für beide Seiten passt: Starttermin &amp; Onboarding.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="eyebrow">Team &amp; Standort</div>
+            <h2 class="section-title">Arbeiten in Haan – mit kurzen Wegen.</h2>
+            <p class="section-copy">Sie arbeiten in einem Umfeld, in dem Mandantenkontakt, Qualität und Organisation zusammenpassen. Der Standort ist gut erreichbar – und Gespräche sind bei Bedarf auch digital möglich.</p>
+
+            <div class="grid-2 mt-4">
+              <article class="card soft">
+                <div class="card-kicker">Standort</div>
+                <h3>Zeppelinstraße 1 · 42781 Haan</h3>
+                <p>Ruhige Arbeitsatmosphäre, klare Struktur – und ein Team, das sich gegenseitig unterstützt.</p>
+                <div class="page-actions actions--start">
+                  <a href="/kontakt/" class="button-secondary">Kontakt</a>
+                  <a href="https://www.google.com/maps?q=Zeppelinstra%C3%9Fe%201%2C%2042781%20Haan" target="_blank" rel="noopener" class="button-secondary">Route</a>
+                </div>
+              </article>
+              <article class="card soft">
+                <div class="card-kicker">Teamfokus</div>
+                <h3>Fachlich stark – menschlich sauber.</h3>
+                <ul>
+                  <li>klare Übergaben und Zuständigkeiten</li>
+                  <li>saubere Vorlagen/Standards</li>
+                  <li>Rückfragen sind normal (und erwünscht)</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--soft">
+          <div class="container">
+            <div class="eyebrow">Ansprechpartner</div>
+            <div class="contact-feature">
+              <div class="contact-feature-copy">
+                <h3>Einfach mal kennenlernen — gerne.</h3>
+                <p>Ich bin Patrick Holder, dein Ansprechpartner in unserer Kanzlei. Mir ist wichtig, dass du weißt, wie wir arbeiten und was dich bei uns erwartet.</p>
+                <p>In einem kurzen Gespräch – telefonisch, per Webmeeting oder bei einem Kaffee, gerne auch nach Feierabend in unserer Kanzlei – kannst du uns kennenlernen. Wir sprechen über deine Erfahrungen, deine Ziele und was dir im Arbeitsalltag wichtig ist.</p>
+                <p>Nutze das Formular für ein erstes Gespräch. Ich melde mich zeitnah bei dir. Ich freue mich, dich kennenzulernen.</p>
+                <div class="contact-feature-seals">
+                  <img src="/assets/datev-siegel-2025.png" alt="DATEV Label Digitale Kanzlei 2025" loading="lazy" decoding="async">
+                  <img src="/assets/award-arbeitgeber-zukunft-2026.png" alt="Arbeitgeber der Zukunft 2026 – Steuerberatung Oettinger" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <div class="contact-feature-photo">
+                <img src="/assets/team-01.jpg" alt="Patrick Holder, Ansprechpartner für Karriere bei Steuerberatung Oettinger" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="eyebrow">FAQ</div>
+            <h2 class="section-title">Häufige Fragen zur Bewerbung</h2>
+            <div class="faq-list">
+              <details class="faq-item"><summary>Kann ich mich initiativ bewerben?</summary><div class="faq-answer"><p>Ja. Wenn Sie fachlich und menschlich gut zu uns passen, sprechen wir gerne – auch ohne ausgeschriebene Stelle.</p></div></details>
+              <details class="faq-item"><summary>Wie schnell bekomme ich Rückmeldung?</summary><div class="faq-answer"><p>In der Regel zeitnah. Wir möchten, dass Sie nicht in einem langen Schwebezustand hängen.</p></div></details>
+              <details class="faq-item"><summary>Ist ein Kennenlernen per Video möglich?</summary><div class="faq-answer"><p>Ja. Das erste Gespräch kann auch als Video-Call stattfinden – unkompliziert und effizient.</p></div></details>
+              <details class="faq-item"><summary>Welche Unterlagen sollen mitgeschickt werden?</summary><div class="faq-answer"><p>Gern Lebenslauf und ein paar Sätze zu Ihrer Rolle. Zeugnisse sind hilfreich, aber kein Hindernis für ein erstes Gespräch.</p></div></details>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--soft section--lg">
+          <div class="container">
+            <div class="eyebrow">Offene Stellen</div>
+            <h2 class="section-title section-title--sub">Aktuell offene Positionen</h2>
+            <p class="section-copy">Wenn gerade keine Stelle online ist: Initiativbewerbungen sind ausdrücklich willkommen.</p>
+
+            <div id="jobs" class="jobs mt-4" aria-live="polite">
+              <div class="card soft">
+                <div class="card-kicker">Karriere</div>
+                <h3>Aktuell keine offenen Stellen</h3>
+                <p>Initiativbewerbungen sind jederzeit willkommen: <a href="mailto:info@stbin-oettinger.de">info@stbin-oettinger.de</a>.</p>
+              </div>
+            </div>
+
+            <div class="card dark mt-3">
+              <div class="card-kicker">Initiativ</div>
+              <h3 class="text-white">Nichts dabei? Sprechen Sie uns an.</h3>
+              <p class="muted">Schicken Sie uns kurz Ihren Lebenslauf oder ein paar Zeilen zu Ihrer Rolle – wir melden uns persönlich zurück.</p>
+              <div class="page-actions mt-3">
+                <a href="mailto:info@stbin-oettinger.de?subject=Initiativbewerbung%20%E2%80%93%20Steuerberatung%20Oettinger" class="button-ghost">Initiativ bewerben</a>
+                <a href="/kontakt/" class="button">Karrieregespräch anfragen</a>
+              </div>
+            </div>
+          </div>
+        </section>
+</Base>
+
+<script>
+  import '../scripts/jobs.js';
+</script>

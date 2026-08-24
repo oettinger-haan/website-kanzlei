@@ -1,0 +1,132 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Steuerberatung Handwerk & Bau | Baulohn, A’Conto, BWA | Oettinger';
+const description = 'Für Handwerk & Bau: Baulohn, A’Conto/Schlussrechnungen, Zusatzkassen und Auswertungen, die wirklich helfen – digital und termintreu.';
+---
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Unterstützen Sie sowohl Handwerksbetriebe als auch Bauunternehmen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Die Seite ist bewusst für Handwerk und Bau zusammen gedacht, weil beide Bereiche besondere Anforderungen an Auswertungen, Lohn und praktische Prozesse im Alltag mitbringen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist bei Baulohn und Zusatzkassen besonders wichtig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wichtig sind saubere Abrechnungslogiken, aktuelles Fachwissen zu Tarifverträgen und eine termintreue Umsetzung. Genau hier entlasten wir Sie mit Erfahrung und klaren Abläufen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Können A’Conto- und Schlussrechnungen in der Auswertung realistisch abgebildet werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Gerade das ist entscheidend, damit Ihre BWA nicht an der betrieblichen Realität vorbeigeht, sondern Ihnen wirklich zeigt, wo Ihr Unternehmen steht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist auch eine digitale Zusammenarbeit bei Stunden- und Bewegungsdaten möglich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Wir unterstützen dabei, digitale Erfassungssysteme sinnvoll anzubinden, damit weniger Medienbruch entsteht und Auswertungen schneller nutzbar werden."
+      }
+    }
+  ]
+};
+
+<Base title={title} description={description} noindex={false} structuredData={[faqSchema]}>
+<section class="subhero">
+          <div class="container subhero-layout">
+            <div>
+              <div class="page-kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4 6 4v14"></path><path d="M9 21v-8h6v8"></path></svg> Handwerk &amp; Bau</div>
+              <h1 class="section-title">Überregionale Finanz- und Lohnbuchhaltung – für Handwerks- und Baubetriebe mit Anspruch an Klarheit.</h1>
+              <p class="section-copy">Handwerk und Bau bringen im Alltag viele Besonderheiten mit: A’Conto, Schlussrechnungen, komplexe Tariflogiken, Zusatzkassen und laufende Projekte. Wir haben den Anspruch, Ihnen eine betriebswirtschaftliche Auswertung zu liefern, die wirklich hilft – damit Sie sehen, wo Ihr Unternehmen steht, wie sich Liquidität entwickelt und welche nächsten Schritte sinnvoll sind.</p>
+              
+              <div class="page-actions">
+                <a href="/kontakt/" class="button">Handwerk &amp; Bau anfragen</a>
+                <a href="/leistungen/" class="button-secondary active">Zu den Leistungen</a>
+              </div>
+            </div>
+            <div class="subhero-panel">
+              <h2 class="mt-0">Was wir für Handwerks- und Bau-Betriebe abdecken</h2>
+              <ul>
+                <li>Anzahlungsrechnungen (A’Conto) &amp; Schlussabrechnungen in der Fibu</li>
+                <li>Baulohn, Zusatzkassen, Tarifverträge, Saison-KUG</li>
+                <li>digitale Erfassung von Stunden &amp; Bewegungsdaten (System-Anbindung)</li>
+              </ul>
+            </div>
+          </div><div class="container microcards-full"><div class="microcards" aria-label="Handwerk &amp; Bau auf einen Blick">
+                <div class="microcard">
+                  <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 14l3-3 4 4 6-8"></path></svg></div>
+                  <div><strong>Aussagekräftige BWA</strong><span>Auswertungen, die A’Conto/Schlussrechnungen realistisch abbilden – statt „Zahlenfriedhof“.</span></div>
+                </div>
+                <div class="microcard">
+                  <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-4 12c.6.5 1 1.2 1 2v1h6v-1c0-.8.4-1.5 1-2a7 7 0 0 0-4-12z"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg></div>
+                  <div><strong>Baulohn-Komplexität</strong><span>Zusatzkassen, Tarifverträge, Saison-KUG: termintreu, sauber und nachvollziehbar gerechnet.</span></div>
+                </div>
+                <div class="microcard">
+                  <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M7 8h10"></path><path d="M7 12h6"></path></svg></div>
+                  <div><strong>Digitale Erfassung</strong><span>Stunden-/Bewegungsdaten strukturiert anbinden, damit weniger Medienbruch entsteht.</span></div>
+                </div>
+              </div></div>
+        </section>
+
+        <section class="section section--sm">
+          <div class="container">
+            <div class="mesh-panel">
+              <div class="eyebrow">Typische Frage</div>
+              <h2 class="section-title">„Wo ist denn der ganze Gewinn hin?“</h2>
+              <p class="section-copy">Wenn Sie sich diese Frage stellen, sind Sie bei uns richtig. Wir bereiten Auswertungen so auf, dass sie nicht zum Zahlenfriedhof werden, sondern verständlich, vergleichbar und steuerungsfähig – gerne auch mit Vergleichszahlen für Ihre Branche.</p>
+              <div class="steps" aria-label="Zusammenarbeit in 4 Schritten">
+                <div class="step"><div class="step-index">1</div><div><h3>Grundlage klären</h3><p>Welche Abrechnungslogik, welche Projekte, welche Personalsysteme – und welche Auswertungen brauchen Sie wirklich?</p></div></div>
+                <div class="step"><div class="step-index">2</div><div><h3>Fibu &amp; Baulohn sauber abbilden</h3><p>A’Conto und Schlussrechnungen werden so berücksichtigt, dass Ihre BWA aussagekräftig bleibt. Baulohn läuft termintreu und nachvollziehbar.</p></div></div>
+                <div class="step"><div class="step-index">3</div><div><h3>Digitalisieren, wo es Sinn macht</h3><p>Stunden-/Bewegungsdaten digital erfassen und an die Lohnbuchhaltung anbinden – weniger Medienbruch, weniger Nacharbeit.</p></div></div>
+                <div class="step"><div class="step-index">4</div><div><h3>Monatlich in die Zukunft blicken</h3><p>Liquiditätsmonitor gewünscht? Sprechen wir darüber. Ziel ist planbare Steuerung statt Überraschungen.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--soft">
+          <div class="container grid-3">
+            <article class="card">
+              <div class="feature-item">
+                <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73z"></path><path d="M3.3 7l8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg></div>
+                <div><div class="card-kicker">Baulohn</div><h3>Komplexe Komponenten – zuverlässig gerechnet.</h3><p>Tarifverträge, Zusatzkassen, saisonale Besonderheiten: Wir übernehmen die zeitintensive Lohnarbeit, damit Sie den Kopf frei haben.</p></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="feature-item">
+                <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 14l3-3 4 4 6-8"></path></svg></div>
+                <div><div class="card-kicker">Auswertungen</div><h3>Liquidität, BWA, Vergleichbarkeit.</h3><p>Aussagekräftig bedeutet: A’Conto/Schlussrechnungen korrekt berücksichtigt, damit Ihre Zahlen die Realität abbilden.</p></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="feature-item">
+                <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12c.6.5 1 1.2 1 2v1h6v-1c0-.8.4-1.5 1-2a7 7 0 0 0-4-12z"></path></svg></div>
+                <div><div class="card-kicker">Digital</div><h3>Stunden &amp; Bewegungsdaten anbinden.</h3><p>Wir unterstützen bei der Anbindung Ihrer digitalen Systeme – oder begleiten den Umstieg von Papier auf eine praktikable Lösung.</p></div>
+              </div>
+            </article>
+          </div>
+          <div class="container"><div class="page-actions"><a href="/kontakt/" class="button">Unverbindlich anfragen</a></div></div>
+          <div class="container mt-4">
+            <div class="eyebrow">FAQ</div>
+            <h2 class="section-title section-title--sub">Häufige Fragen von Handwerk &amp; Bau</h2>
+            <div class="faq-list">
+              <details class="faq-item"><summary>Unterstützen Sie sowohl Handwerksbetriebe als auch Bauunternehmen?</summary><div class="faq-answer"><p>Ja. Die Seite ist bewusst für Handwerk und Bau zusammen gedacht, weil beide Bereiche besondere Anforderungen an Auswertungen, Lohn und praktische Prozesse im Alltag mitbringen.</p></div></details>
+              <details class="faq-item"><summary>Was ist bei Baulohn und Zusatzkassen besonders wichtig?</summary><div class="faq-answer"><p>Wichtig sind saubere Abrechnungslogiken, aktuelles Fachwissen zu Tarifverträgen und eine termintreue Umsetzung. Genau hier entlasten wir Sie mit Erfahrung und klaren Abläufen.</p></div></details>
+              <details class="faq-item"><summary>Können A’Conto- und Schlussrechnungen in der Auswertung realistisch abgebildet werden?</summary><div class="faq-answer"><p>Ja. Gerade das ist entscheidend, damit Ihre BWA nicht an der betrieblichen Realität vorbeigeht, sondern Ihnen wirklich zeigt, wo Ihr Unternehmen steht.</p></div></details>
+              <details class="faq-item"><summary>Ist auch eine digitale Zusammenarbeit bei Stunden- und Bewegungsdaten möglich?</summary><div class="faq-answer"><p>Ja. Wir unterstützen dabei, digitale Erfassungssysteme sinnvoll anzubinden, damit weniger Medienbruch entsteht und Auswertungen schneller nutzbar werden.</p></div></details>
+            </div>
+          </div>
+        </section>
+</Base>

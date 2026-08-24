@@ -42,3 +42,55 @@ NICHT auf /leistungen/vermoegensaufbau/ umleiten. Der alte Inhalt dort
 (DATEV, BAFA-Foerderung, digitale Buchfuehrung) ist inhaltlich etwas
 anderes als der neue Vermoegensaufbau-Content. Erst umleiten, wenn
 /leistungen/digitale-buchhaltung/ mit eigenem Inhalt existiert.
+
+## WIADOK-Integration (Stand: noch nicht umgesetzt, Inhalt fehlt)
+
+Laut Sascha (WIADOK, per Mail) sind zwei Unterseiten der alten Domain im
+Einsatz und muessen entweder unter derselben URL weiterlaufen oder per
+Redirect abgefangen werden - sonst funktionieren alte/archivierte
+Verweise (z. B. aus versendeten Newslettern) nicht mehr:
+
+| WIADOK-Baustein | Alte URL | Inhalt |
+|---|---|---|
+| Steuernews | /news | ERLEDIGT: liegt jetzt unter /news/ (Top-Level-Route, bewusst NICHT unter /aktuelles/news/ verschachtelt - das gespeicherte WIADOK-Konfig (_confRequestUrl, _teaserLocation) verweist fest auf .../news/, daher exakte URL-Uebernahme statt Redirect-Wette) |
+| Dialog (Newsletter + Rueckfrageformular) | /dialog/ | Zwei Funktionen auf einer Seite: Newsletter-Anmeldung UND ein individuelles Rueckfrageformular (URL enthaelt employeeid + article als Parameter - vermutlich WIADOK-seitig dynamisch erzeugt, nicht rein statisch) |
+
+Beispiel-Rueckfrageformular-URL mit Parametern:
+/dialog/?form=frage_stellen&employeeid=82388886&article=121198907
+
+STATUS Steuernews (/news/): UMGESETZT. Echtes wiadok-frame-Tag mit den
+per DevTools ausgelesenen Live-Werten eingebaut (api-config,
+api-client-data, dazugehoeriges CSS-Link-Tag). Ladevorgang haengt am
+bestehenden Cookie-Consent-Gate (site.js, template-basierte Variante).
+
+EIGENMAECHTIG ANGEPASST, BITTE MIT SASCHA GEGENCHECKEN:
+_teaserLocation stand im Original auf dem WIADOK-eigenen Platzhalter
+"https://bitte-aendern.de/" - das kann kein Zufall sein, das ist deren
+eigene "TODO"-Markierung. Ich habe das auf
+"https://www.steuerberaterin-haan.de/news/" gesetzt (beste Vermutung:
+Ziel-URL fuer Artikel-Detailansichten/Weiterlesen-Links), aber das ist
+NICHT bestaetigt. Bitte vor Livegang mit Sascha klaeren, wohin
+_teaserLocation tatsaechlich zeigen soll.
+
+STATUS Dialog (/dialog/): UMGESETZT. Ein wiadok-frame-Tag deckt BEIDE
+Faelle ab (Newsletter-Anmeldung als Default, Rueckfrageformular ueber
+?form=frage_stellen&employeeid=...&article=... in der URL) - kein
+separater Code noetig, war dieselbe Vermutung wie bei den Steuernews,
+diesmal bestaetigt.
+
+WICHTIGER BEFUND, BITTE MIT SASCHA BESPRECHEN:
+- Benachrichtigung bei neuer Newsletter-Anmeldung geht an
+  sascha.witte@wiadok.de (WIADOK-Mitarbeiter-Adresse), NICHT an eine
+  Adresse der Kanzlei. Falls die Kanzlei automatisch informiert werden
+  soll, wenn sich jemand anmeldet, muss das separat geklaert werden
+  (z. B. eigener Portal-Zugang bei WIADOK, oder Sascha bittet, einen
+  Kanzlei-Verteiler mit in die Benachrichtigung aufzunehmen).
+- Im selben Konfig-Block steckt ein drittes, ungenutztes Formular
+  "kontool_order" mit Zielemail "kanzlei@xyz.de" - sieht nach einem
+  nicht fertig eingerichteten WIADOK-Platzhalter aus (aehnlich wie
+  "bitte-aendern.de" vorher). Nicht aktiv verlinkt, aber falls WIADOK
+  das Formular jemals ueber einen eigenen Link aktiviert, geht die
+  Benachrichtigung aktuell ins Leere. Ebenfalls mit Sascha klaeren.
+
+Datenschutzerklaerung wurde entsprechend aktualisiert (Abschnitt
+"Newsletter"), Footer-Link "Newsletter" -> /dialog/ ergaenzt.
