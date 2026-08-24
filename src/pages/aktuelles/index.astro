@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Aktuelles | News & Blog | Steuerberatung Oettinger';
+const description = 'Aktuelle Hinweise rund um Steuern – kompakt in den News, vertiefend im Blog.';
+---
+
+<Base title={title} description={description} noindex={false}>
+<section class="subhero"><div class="container subhero-layout"><div><div class="eyebrow">Aktuelles</div><h1 class="section-title">Aktuelles</h1><p class="section-copy">Hier bündeln wir aktuelle Hinweise und Einordnung rund um Steuern – kompakt in den News, ausführlicher im Blog.</p></div><div class="subhero-panel"><h2 class="mt-0">Inhalte</h2><ul><li>News: kurz &amp; relevant</li><li>Blog: tiefer &amp; erklärend</li></ul></div></div></section>
+        <section class="section"><div class="container grid-2"><article class="card"><div class="card-kicker">News</div><h3>Kompakte Updates.</h3><p>Kurze Hinweise zu Fristen, Änderungen und Themen, die Mandanten wirklich betreffen.</p><div class="mt-3"><a href="/aktuelles/news/" class="button-secondary">Zu den News</a></div></article><article class="card"><div class="card-kicker">Blog</div><h3>Einordnung &amp; Wissen.</h3><p>Vertiefende Beiträge, die erklären, was sich ändert – und was das konkret bedeutet.</p><div class="mt-3"><a href="/aktuelles/blog/" class="button-secondary">Zum Blog</a></div></article></div></section>
+</Base>
