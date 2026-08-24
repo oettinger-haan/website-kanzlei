@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Kontakt | Steuerberatung Oettinger in Haan';
+const description = 'Kontakt zu Steuerberatung Oettinger in Haan: Schreiben Sie uns über das Formular oder rufen Sie an – wir melden uns zeitnah zurück.';
+---
+
+<Base title={title} description={description} noindex={false}>
+<section class="subhero"><div class="container"><div class="eyebrow">Kontakt</div><h1 class="section-title">Mehr Zeit für die wichtigen Dinge beginnt mit einem Gespräch.</h1><p class="section-copy">Schreiben Sie uns über das Formular oder nehmen Sie direkt per Telefon oder E-Mail Kontakt auf – wir kümmern uns.</p></div></section>
+        <section class="section">
+          <div class="container contact-layout contact-swap">
+            <article class="card dark">
+              <div class="card-kicker">Kontaktformular</div>
+              <h2 class="text-white">Unverbindlich anfragen</h2>
+              <p class="muted mb-3">Schreiben Sie uns – wir melden uns zeitnah persönlich zurück. Bitte übermitteln Sie hierüber keine vertraulichen Unterlagen oder Mandatsdaten; für den Austausch von Dokumenten nutzen wir mit Ihnen gemeinsam einen sicheren Weg.</p>
+              <!-- Formular-Backend: PostTo (EU-Hosting, DSGVO-konform, Dashboard im
+                   Free-Plan enthalten). Endpoint fuer das allgemeine Kontaktformular.
+                   PostTo legt kein Feldschema fest - Feldnamen sind frei waehlbar.
+                   Betreff, Benachrichtigungssprache etc. werden im PostTo-Dashboard
+                   pro Endpoint eingestellt, nicht ueber Hidden-Fields. -->
+              <form class="contact-form" action="https://postto.dev/api/v1/send/ep_GfaOmH9ennfayUJJ" method="post">
+                <!-- Honeypot (Spam-Schutz) -->
+                <input class="visually-hidden" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <input type="text" name="vorname" placeholder="Vorname" required="">
+                <input type="text" name="nachname" placeholder="Nachname" required="">
+                <input type="email" name="email" placeholder="E-Mail-Adresse" required="">
+                <input type="tel" name="telefon" placeholder="Telefonnummer">
+                <input type="text" name="unternehmen" placeholder="Unternehmen">
+                <select name="thema" required="">
+                  <option value="">Bitte Thema wählen</option>
+                  <option>Unternehmer</option>
+                  <option>Handwerk &amp; Bau</option>
+                  <option>E-Commerce</option>
+                  <option>Finanzdienstleister &amp; Versicherer</option>
+                  <option>Privatpersonen &amp; Vermögen</option>
+                  <option>Lohnkompetenzzentrum</option>
+                  <option>Karriere</option>
+                </select>
+                <textarea class="field-full" name="nachricht" placeholder="Ihre Nachricht" required=""></textarea>
+                <label class="checkbox-row field-full"><input type="checkbox" required=""><span>Ich habe die <a class="link-inline" href="/datenschutz/">Datenschutzhinweise</a> zur Kenntnis genommen und stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und per E-Mail an die Kanzlei übermittelt werden.</span></label>
+                <div class="field-full"><button type="submit" class="button">Nachricht absenden</button></div>
+              </form>
+            </article>
+            <div>
+              <div class="card soft contact-card">
+                <div class="card-kicker">Direkter Kontakt</div>
+                <h3 class="mt-0">Steuerberatung Oettinger</h3>
+                <p class="copy-tight">Zeppelinstraße 1<br>42781 Haan, NRW</p>
+                <a class="link-inline contact-route" href="https://www.google.com/maps?q=Zeppelinstra%C3%9Fe%201%2C%2042781%20Haan" target="_blank" rel="noopener">Route anzeigen</a>
+
+                <div class="contact-divider" aria-hidden="true"></div>
+
+                <ul class="contact-detail-list">
+                  <li>
+                    <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+                    <div><strong>Telefon</strong><a href="tel:+492129566220">+49 (0) 2129 566 22 0</a></div>
+                  </li>
+                  <li>
+                    <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"></path><path d="m3 7 9 6 9-6"></path><rect x="3" y="5" width="18" height="14" rx="2"></rect></svg></div>
+                    <div><strong>E-Mail</strong><a href="mailto:info@stbin-oettinger.de">info@stbin-oettinger.de</a></div>
+                  </li>
+                  <li>
+                    <div class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div>
+                    <div><strong>Gespräch</strong><span>Telefonisch, per Webmeeting oder vor Ort</span></div>
+                  </li>
+                </ul>
+
+                <div class="contact-divider" aria-hidden="true"></div>
+
+                <div class="contact-hours">
+                  <strong>Öffnungszeiten</strong>
+                  <dl>
+                    <div><dt>Mo, Di, Do</dt><dd>08:00–17:00 Uhr</dd></div>
+                    <div><dt>Mi</dt><dd>08:00–14:00 Uhr</dd></div>
+                    <div><dt>Fr</dt><dd>geschlossen</dd></div>
+                  </dl>
+                  <span class="muted">Termine nach Vereinbarung</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+</Base>
